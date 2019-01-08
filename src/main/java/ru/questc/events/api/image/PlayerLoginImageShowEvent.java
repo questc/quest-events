@@ -8,6 +8,9 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import ru.progrm_jarvis.minecraft.commons.mapimage.MapImage;
 
+/**
+ * Called when the attempt is made to show the image to the player on his login.
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @FieldDefaults(level = AccessLevel.PROTECTED)
@@ -19,7 +22,7 @@ public class PlayerLoginImageShowEvent extends PlayerEvent implements Cancellabl
     @Getter private static HandlerList handlerList;
 
     /**
-     * Image shown to player
+     * Image to be shown to the player
      */
     MapImage image;
 
