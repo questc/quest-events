@@ -31,7 +31,7 @@ public interface ImageManager {
      *
      * @apiNote if there are multiple images registered then random one should be used on player's login
      */
-    MapImage registerLoginImage(@NonNull final BufferedImage image);
+    MapImage registerLoginImage(@NonNull BufferedImage image);
 
     /**
      * uNRegistered the image shown to players on login.
