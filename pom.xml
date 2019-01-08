@@ -38,7 +38,7 @@
         </pluginManagement>
     </build>
 
-    <!-- All `compile` and `provided` dependencies should be available at runtime without relocations -->
+    <!-- All `compile` and non-`optional` dependencies should be available at runtime without relocations -->
     <dependencies>
         <!-- Spigot API is always available -->
         <dependency>
