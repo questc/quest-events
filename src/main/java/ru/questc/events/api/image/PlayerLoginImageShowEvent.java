@@ -1,11 +1,9 @@
 package ru.questc.events.api.image;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import ru.progrm_jarvis.minecraft.commons.mapimage.MapImage;
@@ -13,7 +11,7 @@ import ru.progrm_jarvis.minecraft.commons.mapimage.MapImage;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @FieldDefaults(level = AccessLevel.PROTECTED)
-public class PlayerLoginImageShowEvent extends PlayerEvent {
+public class PlayerLoginImageShowEvent extends PlayerEvent implements Cancellable {
 
     /**
      * Handler list of the event
@@ -26,12 +24,19 @@ public class PlayerLoginImageShowEvent extends PlayerEvent {
     MapImage image;
 
     /**
+     * Flag indicating whether the event is cancelled or not
+     */
+    boolean cancelled;
+
+    /**
      * Constructs new event based on player specified.
      *
-     * @param who player to whom the event is related
+     * @param player player to whom the event is related
      */
-    public PlayerLoginImageShowEvent(final Player who) {
-        super(who);
+    public PlayerLoginImageShowEvent(@NonNull final Player player, @NonNull final MapImage image) {
+        super(player);
+
+        this.image = image;
     }
 
     @Override
