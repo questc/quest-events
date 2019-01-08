@@ -32,6 +32,7 @@ public class PlayerLoginImageShowEvent extends PlayerEvent implements Cancellabl
      * Constructs new event based on player specified.
      *
      * @param player player to whom the event is related
+     * @param image image to be shown to the player
      */
     public PlayerLoginImageShowEvent(@NonNull final Player player, @NonNull final MapImage image) {
         super(player);
